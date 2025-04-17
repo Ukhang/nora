@@ -287,6 +287,27 @@ const css = `
       transform: scaleY(1.5);
     }
   }
+
+   /* Ripple variant */
+  .ai-ripple span {
+    position: absolute;
+    border: 2px solid var(--c);
+    border-radius: 50%;
+    opacity: 0;
+    animation: ripple 1.5s infinite;
+  }
+
+  .ai-ripple span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .ai-dark .ai-ripple span,
+  .ai-system [data-theme='dark'] .ai-ripple span,
+  @media (prefers-color-scheme: dark) {
+    .ai-system .ai-ripple span {
+      border-color: var(--c);
+    }
+  }
 `;
 
 export const Nora = ({
