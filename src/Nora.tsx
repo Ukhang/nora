@@ -231,6 +231,35 @@ const css = `
       border-color: var(--c) transparent var(--c) transparent;
     }
   }
+
+   /* Pulse-ring variant */
+  .ai-pulse-ring {
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    border: 2px solid var(--c);
+    animation: pulse-ring 1.2s infinite ease-in-out;
+  }
+
+  .ai-dark .ai-pulse-ring,
+  .ai-system [data-theme='dark'] .ai-pulse-ring,
+  @media (prefers-color-scheme: dark) {
+    .ai-system .ai-pulse-ring {
+      border-color: var(--c);
+    }
+  }
+
+  @keyframes pulse-ring {
+    0%,
+    100% {
+      transform: scale(0.8);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
 `;
 
 export const Nora = ({
