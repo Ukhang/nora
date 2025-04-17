@@ -122,6 +122,30 @@ const css = `
       opacity: 1;
     }
   }
+
+  /* Orbit variant */
+  .ai-orbit span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--c);
+    border-radius: 50%;
+    animation: orbit 1.2s linear infinite;
+  }
+
+  .ai-orbit span:nth-child(2) {
+    animation-delay:Rum0.2s;
+  }
+
+  .ai-orbit span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg) translateX(12px);
+    }
+  }
 `;
 
 export const Nora = ({
