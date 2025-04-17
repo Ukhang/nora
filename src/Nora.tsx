@@ -205,6 +205,32 @@ const css = `
       opacity: 0.5;
     }
   }
+
+  /* Dual-ring variant */
+  .ai-dual-ring {
+    display: inline-block;
+    width: var(--s);
+    height: var(--s);
+  }
+
+  .ai-dual-ring:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--c);
+    border-color: var(--c) transparent var(--c) transparent;
+    animation: spin var(--d) linear infinite;
+  }
+
+  .ai-dark .ai-dual-ring:after,
+  .ai-system [data-theme='dark'] .ai-dual-ring:after,
+  @media (prefers-color-scheme: dark) {
+    .ai-system .ai-dual-ring:after {
+      border-color: var(--c) transparent var(--c) transparent;
+    }
+  }
 `;
 
 export const Nora = ({
