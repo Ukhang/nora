@@ -260,6 +260,33 @@ const css = `
       opacity: 1;
     }
   }
+
+  /* Bars variant */
+  .ai-bars span {
+    width: 4px;
+    height: 12px;
+    margin: 0 1px;
+    background: var(--c);
+    animation: bars 1s infinite;
+  }
+
+  .ai-bars span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .ai-bars span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes bars {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.5);
+    }
+  }
 `;
 
 export const Nora = ({
