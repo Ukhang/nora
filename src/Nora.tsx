@@ -319,6 +319,21 @@ const css = `
       opacity: 0;
     }
   }
+
+  /* Rolling variant */
+  .ai-rolling span {
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    background: var(--c);
+    animation: roll 0.8s linear infinite alternate;
+  }
+
+  @keyframes roll {
+    to {
+      transform: translateX(10px);
+    }
+  }
 `;
 
 export const Nora = ({
