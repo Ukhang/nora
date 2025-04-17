@@ -334,6 +334,60 @@ const css = `
       transform: translateX(10px);
     }
   }
+
+   /* Wave variant */
+  .ai-wave span {
+    width: 4px;
+    height: 20px;
+    margin: 0 1px;
+    background: var(--c);
+    animation: wave 1.2s ease-in-out infinite;
+  }
+
+  .ai-wave span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .ai-wave span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2);
+    }
+  }
+
+   /* Wave variant */
+  .ai-wave span {
+    width: 4px;
+    height: 20px;
+    margin: 0 1px;
+    background: var(--c);
+    animation: wave 1.2s ease-in-out infinite;
+  }
+
+  .ai-wave span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .ai-wave span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2);
+    }
+  }
 `;
 
 export const Nora = ({
