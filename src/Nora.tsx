@@ -31,15 +31,19 @@ const css = `
     align-items: center;
     justify-content: center;
     --s: 24px;
-    --c: #0a0a0a;
+    --c: #0a0a0a; /* Default color */
     --d: 1000ms;
   }
 
   /* Theme handling */
   .ai-dark,
-  .ai-system [data-theme='dark'],
+  .ai-system[data-theme='dark'],
+  .ai-system:not([data-theme='light']) {
+    --c: #fff; /* Dark mode color */
+  }
+
   @media (prefers-color-scheme: dark) {
-    .ai-system {
+    .ai-system:not([data-theme='light']) {
       --c: #fff;
     }
   }
@@ -59,14 +63,6 @@ const css = `
     border-top-color: var(--c);
     border-radius: 50%;
     animation: spin var(--d) linear infinite;
-  }
-
-  .ai-dark .ai-spinner,
-  .ai-system [data-theme='dark'] .ai-spinner,
-  @media (prefers-color-scheme: dark) {
-    .ai-system .ai-spinner {
-      border-top-color: var(--c);
-    }
   }
 
   @keyframes spin {
@@ -134,7 +130,7 @@ const css = `
   }
 
   .ai-orbit span:nth-child(2) {
-    animation-delay:Rum0.2s;
+    animation-delay: 0.2s; /* Fixed typo */
   }
 
   .ai-orbit span:nth-child(3) {
@@ -147,7 +143,7 @@ const css = `
     }
   }
 
-   /* Drop variant */
+  /* Drop variant */
   .ai-drop span {
     width: 4px;
     height: 10px;
@@ -174,7 +170,7 @@ const css = `
     }
   }
 
-   /* Fade variant */
+  /* Fade variant */
   .ai-fade {
     width: var(--s);
     height: var(--s);
@@ -182,14 +178,6 @@ const css = `
     border: 2px solid var(--c);
     opacity: 0.5;
     animation: fade var(--d) linear infinite;
-  }
-
-  .ai-dark .ai-fade,
-  .ai-system [data-theme='dark'] .ai-fade,
-  @media (prefers-color-scheme: dark) {
-    .ai-system .ai-fade {
-      border-color: var(--c);
-    }
   }
 
   @keyframes fade {
@@ -224,29 +212,13 @@ const css = `
     animation: spin var(--d) linear infinite;
   }
 
-  .ai-dark .ai-dual-ring:after,
-  .ai-system [data-theme='dark'] .ai-dual-ring:after,
-  @media (prefers-color-scheme: dark) {
-    .ai-system .ai-dual-ring:after {
-      border-color: var(--c) transparent var(--c) transparent;
-    }
-  }
-
-   /* Pulse-ring variant */
+  /* Pulse-ring variant */
   .ai-pulse-ring {
     width: var(--s);
     height: var(--s);
     border-radius: 50%;
     border: 2px solid var(--c);
     animation: pulse-ring 1.2s infinite ease-in-out;
-  }
-
-  .ai-dark .ai-pulse-ring,
-  .ai-system [data-theme='dark'] .ai-pulse-ring,
-  @media (prefers-color-scheme: dark) {
-    .ai-system .ai-pulse-ring {
-      border-color: var(--c);
-    }
   }
 
   @keyframes pulse-ring {
@@ -288,7 +260,7 @@ const css = `
     }
   }
 
-   /* Ripple variant */
+  /* Ripple variant */
   .ai-ripple span {
     position: absolute;
     border: 2px solid var(--c);
@@ -299,14 +271,6 @@ const css = `
 
   .ai-ripple span:nth-child(2) {
     animation-delay: 0.5s;
-  }
-
-  .ai-dark .ai-ripple span,
-  .ai-system [data-theme='dark'] .ai-ripple span,
-  @media (prefers-color-scheme: dark) {
-    .ai-system .ai-ripple span {
-      border-color: var(--c);
-    }
   }
 
   @keyframes ripple {
@@ -335,34 +299,7 @@ const css = `
     }
   }
 
-   /* Wave variant */
-  .ai-wave span {
-    width: 4px;
-    height: 20px;
-    margin: 0 1px;
-    background: var(--c);
-    animation: wave 1.2s ease-in-out infinite;
-  }
-
-  .ai-wave span:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-
-  .ai-wave span:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-
-  @keyframes wave {
-    0%,
-    100% {
-      transform: scaleY(1);
-    }
-    50% {
-      transform: scaleY(2);
-    }
-  }
-
-   /* Wave variant */
+  /* Wave variant */
   .ai-wave span {
     width: 4px;
     height: 20px;
@@ -393,7 +330,7 @@ const css = `
 export const Nora = ({
   variant = 'spinner',
   size = 20,
-  color = '#0a0a0a',
+  color, // Removed default color to allow CSS theming
   className = '',
   duration = 1000,
   theme = 'system',
@@ -415,8 +352,8 @@ export const Nora = ({
       style={
         {
           '--s': `${size}px`,
-          '--c': color,
           '--d': `${duration}ms`,
+          ...(color && { '--c': color }), // Only set --c if color is provided
         } as React.CSSProperties
       }
       aria-label="Loading..."
