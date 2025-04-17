@@ -101,6 +101,27 @@ const css = `
       opacity: 1;
     }
   }
+
+  /* Pulse variant */
+  .ai-pulse {
+    width: var(--s);
+    height: var(--s);
+    background: var(--c);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
 `;
 
 export const Nora = ({
