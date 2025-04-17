@@ -146,6 +146,33 @@ const css = `
       transform: rotate(360deg) translateX(12px);
     }
   }
+
+   /* Drop variant */
+  .ai-drop span {
+    width: 4px;
+    height: 10px;
+    margin: 0 2px;
+    background: var(--c);
+    animation: drop 0.6s infinite ease-in-out;
+  }
+
+  .ai-drop span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .ai-drop span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes drop {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
 `;
 
 export const Nora = ({
