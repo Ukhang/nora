@@ -173,6 +173,38 @@ const css = `
       transform: translateY(8px);
     }
   }
+
+   /* Fade variant */
+  .ai-fade {
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    border: 2px solid var(--c);
+    opacity: 0.5;
+    animation: fade var(--d) linear infinite;
+  }
+
+  .ai-dark .ai-fade,
+  .ai-system [data-theme='dark'] .ai-fade,
+  @media (prefers-color-scheme: dark) {
+    .ai-system .ai-fade {
+      border-color: var(--c);
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const Nora = ({
