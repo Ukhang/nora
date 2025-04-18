@@ -1,9 +1,9 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { Nora } from 'nora';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Nora } from 'nora';
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -17,9 +17,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className={`min-h-[100vh] w-full ${
-      theme === "dark" ? "bg-neutral-800" : ""
-    }`}>
+    <div className={`min-h-[100vh] w-full`}>
       <div className="flex items-center gap-2">
         <label htmlFor="theme-select" className="text-sm font-medium">
           Theme:
@@ -37,18 +35,19 @@ export default function Home() {
       </div>
 
       <div className="px-4 py-8 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 max-w-[800px] w-full mx-auto gap-6">
-        <Nora />
-        <Nora variant="dots" theme={"dark"} />
-        <Nora variant="pulse" size={10} />
-        <Nora variant="orbit" />
-        <Nora variant="drop" />
-        <Nora variant="fade" />
-        <Nora variant="dual-ring" />
-        <Nora variant="pulse-ring" />
-        <Nora variant="bars" size={14} />
-        <Nora variant="ripple" size={28} />
-        <Nora variant="rolling" size={10} />
-        <Nora variant="wave" size={18} />
+        <Nora className='bg-green-400' theme={theme as "light" | "dark" | "system"} />
+        <Nora theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="dots" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="pulse" size={10} theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="orbit" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="drop" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="fade" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="dual-ring" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="pulse-ring" theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="bars" size={14} theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="ripple" size={28} theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="rolling" size={10} theme={theme as "light" | "dark" | "system"} />
+        <Nora variant="wave" size={18} theme={theme as "light" | "dark" | "system"} />
       </div>
     </div>
   );

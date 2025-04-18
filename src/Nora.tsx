@@ -15,11 +15,10 @@ type Variant =
   | 'wave';
 type Theme = 'light' | 'dark' | 'system';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   variant?: Variant;
   size?: number;
   color?: string;
-  className?: string;
   duration?: number;
   theme?: Theme;
 }
@@ -31,21 +30,28 @@ const css = `
     align-items: center;
     justify-content: center;
     --s: 24px;
-    --c: #0a0a0a; /* Default color */
+    --c: #0a0a0a; /* Default light color */
     --d: 1000ms;
   }
 
   /* Theme handling */
-  .ai-dark,
-  .ai-system[data-theme='dark'],
-  .ai-system:not([data-theme='light']) {
+  .ai-dark {
     --c: #fff; /* Dark mode color */
   }
 
+  .ai-system {
+    --c: #0a0a0a; /* Default light color */
+  }
+
   @media (prefers-color-scheme: dark) {
-    .ai-system:not([data-theme='light']) {
-      --c: #fff;
+    .ai-system {
+      --c: #fff; /* Dark mode color for system preference */
     }
+  }
+
+  /* Override with custom color if provided */
+  .ai-root[style*="--c"] {
+    --c: var(--c);
   }
 
   /* Base span styles */
@@ -330,10 +336,11 @@ const css = `
 export const Nora = ({
   variant = 'spinner',
   size = 20,
-  color, // Removed default color to allow CSS theming
+  color,
   className = '',
   duration = 1000,
-  theme = 'system',
+  theme = 'light',
+  ...props
 }: Props) => {
   useEffect(() => {
     if (!document.getElementById('nora-css')) {
@@ -348,15 +355,17 @@ export const Nora = ({
     <div
       className={`ai-root ai-${variant} ${
         theme === 'system' ? 'ai-system' : `ai-${theme}`
-      } ${className}`}
+      } ${className}`.trim()}
       style={
         {
           '--s': `${size}px`,
           '--d': `${duration}ms`,
-          ...(color && { '--c': color }), // Only set --c if color is provided
+          ...(color && { '--c': color }),
+          ...props.style,
         } as React.CSSProperties
       }
       aria-label="Loading..."
+      {...props}
     >
       {['dots', 'orbit', 'drop', 'bars', 'wave'].includes(variant) && (
         <>
