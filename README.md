@@ -25,4 +25,4 @@ function MyComponent() {
 ```
 
 ## Documentation
-Find the full API reference, customization options, and examples in the [documentation](https://sonner.emilkowal.ski/getting-started).)
+Find the full API reference, customization options, and examples in the [documentation](https://sonner.emilkowal.ski/getting-started) :)
