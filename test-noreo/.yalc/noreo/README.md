@@ -1,6 +1,6 @@
 https://github.com/user-attachments/assets/3b995c67-4f1f-4ae0-a0b5-c15d2c54395f
 
-[Noreo](https://noreo.ukhang.vercel.app) is a compact, smooth, and minimal loader component for React. It offers a variety of beautiful loading animations and full theme support (light, dark, system) to elevate user experience.
+[noreo](https://noreo.ukhang.vercel.app) is a compact, smooth, and minimal loader component for React. It offers a variety of beautiful loading animations and full theme support (light, dark, system) to elevate user experience.
 
 ## Usage
 

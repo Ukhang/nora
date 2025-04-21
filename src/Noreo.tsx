@@ -333,7 +333,7 @@ const css = `
   }
 `;
 
-export const Nora = ({
+export const Loader = ({
   variant = 'spinner',
   size = 20,
   color,
@@ -343,9 +343,9 @@ export const Nora = ({
   ...props
 }: Props) => {
   useEffect(() => {
-    if (!document.getElementById('nora-css')) {
+    if (!document.getElementById('noreo-css')) {
       const style = document.createElement('style');
-      style.id = 'nora-css';
+      style.id = 'noreo-css';
       style.textContent = css;
       document.head.appendChild(style);
     }

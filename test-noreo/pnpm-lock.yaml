@@ -14,9 +14,9 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      nora:
-        specifier: file:.yalc/nora
-        version: file:.yalc/nora(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      noreo:
+        specifier: file:.yalc/noreo
+        version: file:.yalc/noreo(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -1352,8 +1352,8 @@ packages:
       sass:
         optional: true
 
-  nora@file:.yalc/nora:
-    resolution: {directory: .yalc/nora, type: directory}
+  noreo@file:.yalc/noreo:
+    resolution: {directory: .yalc/noreo, type: directory}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3120,7 +3120,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nora@file:.yalc/nora(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  noreo@file:.yalc/noreo(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)

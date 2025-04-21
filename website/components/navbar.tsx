@@ -27,10 +27,6 @@ export const NAVLINKS = [
     title: 'Guides',
     href: '#',
   },
-  {
-    title: 'Community',
-    href: 'https://github.com/nisabmohd/nora-docs/discussions',
-  },
 ];
 
 export function Navbar() {
@@ -84,7 +80,7 @@ export function Logo() {
   return (
     <div className="text-xs">
       <Link href="/" className="text-md font-bold font-code text-base">
-        Nora
+        Noreo
       </Link>{' '}
       by <Link href="">Ukhang Marma</Link>
     </div>

@@ -1,19 +1,19 @@
 ---
 title: API Reference
-description: What components are available in Nora and how to use them.
+description: What components are available in noreo and how to use them.
 ---
 
 ### Anatomy
 
-Import the Nora component and customize it as needed.
+Import the noreo component and customize it as needed.
 
 ```tsx:MyLoader.tsx
-import { Nora } from 'nora';
+import { Loader } from 'noreo';
 
 export function MyLoader() {
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <Nora
+      <Loader
         variant="spinner"
         size={60}
         color="#4f46e5"
@@ -27,9 +27,9 @@ export function MyLoader() {
 
 ### Components API
 
-Description of props available in the Nora component.
+Description of props available in the noreo component.
 
-#### Nora
+#### Noreo
 
 A flexible and minimal loader component for React.
 | Prop | Type | Default | Description |
@@ -97,4 +97,4 @@ Switches the loader's color based on the user's system theme.
 
 #### Summary
 
-Nora offers a smooth, minimal, and highly customizable loading experience, supporting multiple animation styles and full theme responsiveness.
+noreo offers a smooth, minimal, and highly customizable loading experience, supporting multiple animation styles and full theme responsiveness.

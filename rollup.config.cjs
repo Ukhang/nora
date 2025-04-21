@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-  input: 'src/Nora.tsx',
+  input: 'src/Noreo.tsx',
   output: [
     { file: 'dist/cjs/index.js', format: 'cjs', sourcemap: true, exports: 'named' },
     { file: 'dist/esm/index.js', format: 'esm', sourcemap: true, exports: 'named' },
@@ -36,7 +36,7 @@ module.exports = {
           return;
         }
 
-        srcFile = path.resolve(cjsTypesDir, 'Nora.d.ts');
+        srcFile = path.resolve(cjsTypesDir, 'noreo.d.ts');
         if (fs.existsSync(srcFile)) {
           fs.renameSync(srcFile, destFile);
           fs.rmSync(cjsTypesDir, { recursive: true, force: true });

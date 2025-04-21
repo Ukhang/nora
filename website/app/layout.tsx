@@ -4,9 +4,9 @@ import { Navbar } from "@/components/navbar";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: 'Nora',
+  title: 'Noreo',
   description:
-    'Nora is a compact, smooth, minimal, and customizable loader component for React. It provides beautiful animations, multiple variants, and theme support to enhance user experience.',
+    'noreo is a compact, smooth, minimal, and customizable loader component for React. It provides beautiful animations, multiple variants, and theme support to enhance user experience.',
   keywords: [
     'React loader',
     'Minimal loader',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'React spinner',
     'Compact loader',
     'Loading indicator',
-    'Nora loader',
+    'noreo loader',
     'React UI components',
   ],
   icons: {

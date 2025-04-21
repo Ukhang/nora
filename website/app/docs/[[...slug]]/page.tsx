@@ -53,7 +53,7 @@ export async function generateMetadata(props: PageProps) {
   const { title, description } = res;
 
   return {
-    title: `${title} - Nora`,
+    title: `${title} - Noreo`,
     description,
   };
 }

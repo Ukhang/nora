@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import React from 'react';
-import { Nora } from 'nora';
+import { Noreo } from 'noreo';
 import { useTheme } from 'next-themes';
 
 const variants = [
@@ -39,10 +39,10 @@ export default function Home() {
   return (
     <div className="flex sm:min-h-[91vh] min-h-[88vh] flex-col items-center justify-center text-center px-4 py-8 max-w-xl mx-auto">
       
-      {/* Nora Loader */}
-      <Nora variant={variant} size={60} theme={resolvedTheme as "light" | "dark" | "system"} />
+      {/* noreo Loader */}
+      <Noreo variant={variant} size={60} theme={resolvedTheme as "light" | "dark" | "system"} />
       
-      <h1 className="text-2xl font-bold mb-4 sm:text-5xl mt-8">Nora</h1>
+      <h1 className="text-2xl font-bold mb-4 sm:text-5xl mt-8">Noreo</h1>
       <p className="mb-8 sm:text-md text-muted-foreground text-lg sm:text-xl">
         A compact and customizable loader <br /> component for React.
       </p>
@@ -80,7 +80,7 @@ export default function Home() {
 
         {/* GitHub Link */}
         <Link
-          href={'https://github.com/Ukhang/nora'}
+          href={'https://github.com/Ukhang/noreo'}
           target="_blank"
           className="flex items-center text-sm h-9 px-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-700 hover:text-black dark:hover:text-white font-medium"
         >
