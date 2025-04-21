@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import React from 'react';
-import { Loader } from 'noreo';
+import { Noreo } from 'noreo';
 import { useTheme } from 'next-themes';
 
 const variants = [
@@ -40,7 +40,7 @@ export default function Home() {
     <div className="flex sm:min-h-[91vh] min-h-[88vh] flex-col items-center justify-center text-center px-4 py-8 max-w-xl mx-auto">
       
       {/* noreo Loader */}
-      <Loader variant={variant} size={60} theme={resolvedTheme as "light" | "dark" | "system"} />
+      <Noreo variant={variant} size={60} theme={resolvedTheme as "light" | "dark" | "system"} />
       
       <h1 className="text-2xl font-bold mb-4 sm:text-5xl mt-8">Noreo</h1>
       <p className="mb-8 sm:text-md text-muted-foreground text-lg sm:text-xl">
