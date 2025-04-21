@@ -19,8 +19,8 @@ export function Leftbar() {
     <aside className="md:flex hidden lg:w-[240px] sm:w-[200px] fixed top-0 flex-col h-[100vh] overflow-y-auto bg-[#FAFAFA] dark:bg-[#171716] border-r border-dashed">
       <ScrollArea className="py-4">
         <div className="text-xs border-b border-dashed pb-4 px-4">
-          <Link href="/" className="text-base font-medium">
-            Nora
+          <Link href="/" className="text-base font-medium capitalize">
+            noreo
           </Link>{' '}
           by{' '}
           <Link href="ukhangmarma.vercel.app" target="_blank">
@@ -32,7 +32,7 @@ export function Leftbar() {
       <footer className="mt-auto flex gap-4 items-center justify-between px-4 py-4 border-t border-dashed">
         <ModeToggle />
         <Link
-          href="https://github.com/Ukhang/nora"
+          href="https://github.com/Ukhang/noreo"
           target="_blank"
           className="text-muted-foreground hover:text-neutral-900 dark:hover:text-neutral-100"
         >
@@ -65,7 +65,7 @@ export function SheetLeftbar() {
           <footer className="mt-auto flex gap-4 items-center justify-between px-4 py-4 border-t border-dashed">
             <ModeToggle />
             <Link
-              href="https://github.com/Ukhang/nora"
+              href="https://github.com/Ukhang/noreo"
               target="_blank"
               className="text-muted-foreground hover:text-neutral-900 dark:hover:text-neutral-100"
             >

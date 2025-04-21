@@ -1,5 +1,5 @@
 {
-  "name": "nora",
+  "name": "noreo",
   "version": "1.0.0",
   "description": "A compact and customizable loader component for React.",
   "main": "dist/cjs/index.js",
@@ -28,13 +28,13 @@
   ],
   "author": "Ukhang Marma <ukhangmarma459@gmail.com>",
   "license": "MIT",
-  "homepage": "https://nora.ukhang.vercel.app/",
+  "homepage": "https://noreo.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ukhang/nora"
+    "url": "git+https://github.com/Ukhang/noreo"
   },
   "bugs": {
-    "url": "https://github.com/Ukhang/nora/issues"
+    "url": "https://github.com/Ukhang/noreo/issues"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
