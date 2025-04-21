@@ -1,21 +1,41 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "./ui/button";
-import { AlignLeftIcon } from "lucide-react";
-import DocsMenu from "./docs-menu";
+} from '@/components/ui/sheet';
+import { Logo, NavMenu } from './navbar';
+import { Button } from './ui/button';
+import { AlignLeftIcon, Github } from 'lucide-react';
+import { FooterButtons } from './footer';
+import { DialogTitle } from './ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import DocsMenu from './docs-menu';
+import Link from 'next/link';
+import { ModeToggle } from './theme-toggle';
 
 export function Leftbar() {
   return (
-    <aside className="md:flex hidden flex-[1] min-w-[230px] sticky top-16 flex-col h-[94.5vh] overflow-y-auto">
-      <ScrollArea className="py-4">
+    <aside className="md:flex hidden w-[240px] fixed top-0 flex-col h-[100vh] overflow-y-auto bg-[#FAFAFA] dark:bg-[#171716] border-r border-dashed">
+      <ScrollArea className="py-4 px-4">
+        <div className="text-xs border-b border-dashed pb-4">
+          <Link href="/" className="text-base font-medium">
+            Nora
+          </Link>{' '}
+          by{' '}
+          <Link href="ukhangmarma.vercel.app" target="_blank">
+            Ukhang Marma
+          </Link> 
+        </div>
         <DocsMenu />
       </ScrollArea>
+      <footer className="mt-auto flex gap-4 items-center justify-between mx-4 py-4 border-t border-dashed">
+        <ModeToggle/>
+        <Link href="https://github.com/Ukhang/nora" target='_blank' className='text-muted-foreground hover:text-neutral-900 dark:hover:text-neutral-100'>
+          <Github size={18}/>
+        </Link>
+      </footer>
     </aside>
   );
 }
@@ -25,19 +45,27 @@ export function SheetLeftbar() {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="md:hidden flex">
-          <AlignLeftIcon className="w-5 h-5" />
+          <AlignLeftIcon />
         </Button>
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-4 px-0" side="left">
-        <SheetTitle className="sr-only">Menu</SheetTitle>
+        <DialogTitle className="sr-only">Menu</DialogTitle>
         <SheetHeader>
-          <h2 className="font-extrabold text-start px-8">Menu</h2>
+          <SheetClose className="px-5" asChild>
+            <Logo />
+          </SheetClose>
         </SheetHeader>
-        <ScrollArea className="flex flex-col gap-4">
-          <div className="mx-2 px-5">
+        <div className="flex flex-col gap-4 overflow-y-auto">
+          <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
+            <NavMenu isSheet />
+          </div>
+          <div className="ml-2 pl-5">
             <DocsMenu isSheet />
           </div>
-        </ScrollArea>
+          <div className="p-6 pb-4 flex gap-2.5">
+            <FooterButtons />
+          </div>
+        </div>
       </SheetContent>
     </Sheet>
   );

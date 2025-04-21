@@ -25,13 +25,22 @@ const variants = [
 
 export default function Home() {
   const [variant, setVariant] = React.useState<(typeof variants)[number]>('spinner');
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <div className="flex sm:min-h-[91vh] min-h-[88vh] flex-col items-center justify-center text-center px-2 py-8 max-w-xl mx-auto">
+    <div className="flex sm:min-h-[91vh] min-h-[88vh] flex-col items-center justify-center text-center px-4 py-8 max-w-xl mx-auto">
       
       {/* Nora Loader */}
-      <Nora variant={variant} size={60} theme={theme as "light" | "dark" | "system"} />
+      <Nora variant={variant} size={60} theme={resolvedTheme as "light" | "dark" | "system"} />
       
       <h1 className="text-2xl font-bold mb-4 sm:text-5xl mt-8">Nora</h1>
       <p className="mb-8 sm:text-md text-muted-foreground text-lg sm:text-xl">

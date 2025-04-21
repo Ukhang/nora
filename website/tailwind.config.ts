@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
+import animate from "tailwindcss-animate";
 
 const config = {
   darkMode: ["class"],
@@ -14,7 +16,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1550px",
       },
     },
     extend: {
@@ -59,8 +61,8 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        code: ["var(--font-code)"],
-        regular: ["var(--font-regular)"],
+        code: ["var(--font-geist-mono)"],
+        regular: ["var(--font-geist-sans)"],
       },
       keyframes: {
         "accordion-down": {
@@ -78,7 +80,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [animate, typography],
 } satisfies Config;
 
 export default config;

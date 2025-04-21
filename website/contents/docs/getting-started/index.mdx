@@ -1,0 +1,45 @@
+---
+title: Getting Started
+description: Nora is a compact, smooth, and minimal loader component for React.
+---
+
+### Installation
+Simply pnpm/npm/yarn install the package.
+
+<Tabs defaultValue="pnpm" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+  </TabsList>
+  <TabsContent value="pnpm">
+    ```bash:bash
+    pnpm i nora
+    ``` 
+  </TabsContent>
+  <TabsContent value="npm">
+    ```bash:bash
+    npm i nora
+    ```  
+  </TabsContent>
+  <TabsContent value="yarn">
+    ```bash:bash
+    yarn i nora
+    ```  
+  </TabsContent>
+</Tabs>
+
+### Create a Loader component
+It can be placed anywhere in your app.
+
+```jsx:MyComponent.jsx
+use client;
+
+import { Nora } from 'nora';
+
+function MyComponent() {
+  return (
+      <Nora variant="spinner" />
+  );
+}
+```

@@ -1,47 +1,63 @@
-import Toc from "@/components/toc";
-import { page_routes } from "@/lib/routes-config";
-import { notFound } from "next/navigation";
-import { getDocsForSlug } from "@/lib/markdown";
-import { Typography } from "@/components/typography";
+import Pagination from '@/components/pagination';
+import Toc from '@/components/toc';
+import { page_routes } from '@/lib/routes-config';
+import { notFound } from 'next/navigation';
+import { getCompiledDocsForSlug, getDocFrontmatter } from '@/lib/markdown';
+import { Typography } from '@/components/typography';
 
 type PageProps = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
-export default async function DocsPage({ params: { slug = [] } }: PageProps) {
-  const pathName = slug.join("/");
-  const res = await getDocsForSlug(pathName);
+export default async function DocsPage(props: PageProps) {
+  const params = await props.params;
+  const { slug = [] } = params;
+
+  const pathName = slug.join('/');
+  const res = await getCompiledDocsForSlug(pathName);
 
   if (!res) notFound();
   return (
-    <div className="flex items-start gap-14">
-      <div className="flex-[3] py-10">
-        <Typography>
-          <h1 className="text-3xl -mt-2">{res.frontmatter.title}</h1>
-          <p className="-mt-4 text-muted-foreground text-[16.5px]">
-            {res.frontmatter.description}
-          </p>
-          <div>{res.content}</div>
-        </Typography>
+    <div className="flex items-start gap-10">
+      <div className="flex-[4.5] px-4 max-w-2xl w-full py-10 mx-auto">
+        <div className="w-full mx-auto">
+          <Typography>
+            <h1 className="sm:text-3xl text-2xl !-mt-0.5 font-semibold">
+              {res.frontmatter.title}
+            </h1>
+            <p className="-mt-4 sm:text-[16.5px] text-[14.5px]">
+              {res.frontmatter.description}
+            </p>
+            <div>{res.content}</div>
+            <div className="pb-8"></div>
+            <div className="border-t border-dashed">
+              <Pagination pathname={pathName} />
+            </div>
+          </Typography>
+        </div>
       </div>
+
       <Toc path={pathName} />
     </div>
   );
 }
 
-export async function generateMetadata({ params: { slug = [] } }: PageProps) {
-  const pathName = slug.join("/");
-  const res = await getDocsForSlug(pathName);
-  if (!res) return null;
-  const { frontmatter } = res;
+export async function generateMetadata(props: PageProps) {
+  const params = await props.params;
+  const { slug = [] } = params;
+
+  const pathName = slug.join('/');
+  const res = await getDocFrontmatter(pathName);
+  if (!res) return {};
+  const { title, description } = res;
   return {
-    title: frontmatter.title,
-    description: frontmatter.description,
+    title,
+    description,
   };
 }
 
 export function generateStaticParams() {
-  return page_routes.map((item) => ({
-    slug: item.href.split("/").slice(1),
+  return page_routes.map(item => ({
+    slug: item.href.split('/').slice(1),
   }));
 }
