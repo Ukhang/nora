@@ -29,7 +29,7 @@ export const NAVLINKS = [
   },
   {
     title: 'Community',
-    href: 'https://github.com/nisabmohd/Aria-Docs/discussions',
+    href: 'https://github.com/nisabmohd/nora-docs/discussions',
   },
 ];
 
@@ -38,39 +38,42 @@ export function Navbar() {
 
   return (
     <nav
-      className={`w-full h-16 sticky top-0 z-50 bg-background ${pathName == '/' ? 'block' : 'hidden'}`}
+      className={`w-full h-16 sticky top-0 z-50 bg-background ${pathName == '/' ? 'block' : 'md:hidden sm:border-none border-b border-dashed flex'}`}
     >
-      <div className="sm:container mx-auto w-[95vw] h-full flex items-center sm:justify-between md:gap-2">
+      <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center sm:gap-5 gap-2.5">
-          <SheetLeftbar />
-          <div className="flex items-center gap-6">
-            {pathName !== '/' && (
-              <div className="lg:flex hidden">
-                <Logo />
+          {pathName !== '/' && (
+            <>
+              <SheetLeftbar />
+              <div className="flex items-center gap-6">
+                  <div className="lg:flex hidden">
+                    <Logo />
+                  </div>
+                <div className="md:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground"></div>
               </div>
-            )}
-            <div className="md:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground"></div>
-          </div>
+            </>
+          )}
         </div>
 
-        <div className="flex items-center sm:justify-normal justify-between sm:gap-3 ml-1 sm:w-fit w-[90%]">
-          {/* <AlgoliaSearch {...algolia_props} /> */}
-          <div className="flex items-center justify-between sm:gap-2">
-            <div className="flex ml-4 sm:ml-0">
-              {pathName !== '/' && (
-                <Link
-                  href="https://github.com/nisabmohd/NexDocs"
-                  className={buttonVariants({
-                    variant: 'ghost',
-                    size: 'icon',
-                  })}
-                >
-                  <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
-                </Link>
-              )}
-              <ModeToggle />
+        <div className="flex items-center sm:justify-normal justify-between sm:gap-3 ml-1 sm:w-fit">
+          {pathName == '/' && (
+            <div className="flex items-center justify-between sm:gap-2">
+              <div className="flex ml-4 sm:ml-0">
+                {pathName !== '/' && (
+                  <Link
+                    href="https://github.com/nisabmohd/NexDocs"
+                    className={buttonVariants({
+                      variant: 'ghost',
+                      size: 'icon',
+                    })}
+                  >
+                    <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
+                  </Link>
+                )}
+                <ModeToggle />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </nav>

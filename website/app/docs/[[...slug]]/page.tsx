@@ -49,9 +49,11 @@ export async function generateMetadata(props: PageProps) {
   const pathName = slug.join('/');
   const res = await getDocFrontmatter(pathName);
   if (!res) return {};
+
   const { title, description } = res;
+
   return {
-    title,
+    title: `${title} - Nora`,
     description,
   };
 }

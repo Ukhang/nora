@@ -60,13 +60,13 @@ export default function SubLink({
   );
 
   if (!items) {
-    return <div className="flex flex-col">{titleOrLink}</div>;
+    return <div className="flex flex-col w-full">{titleOrLink}</div>;
   }
 
   return (
     <div className="flex flex-col gap-1 w-full">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <CollapsibleTrigger className="w-full pr-5">
+        <CollapsibleTrigger className="w-full pr-5 rounded-md px-2 py-1">
           <div className="flex items-center justify-between cursor-pointer w-full">
             <span className="w-[95%] overflow-hidden text-ellipsis text-start">
               {titleOrLink}
