@@ -7,32 +7,32 @@ description: The most basic setup for a loader.
 Change the animation style of the loader by setting the variant prop.
 
 ```tsx
-<Noreo/>
-<Noreo variant="ripple" />
-<Noreo variant="pulse" />
-<Noreo variant="orbit" />
+<Loader/>
+<Loader variant="ripple" />
+<Loader variant="pulse" />
+<Loader variant="orbit" />
 ```
 
 ### Color
 Customize the loader color using the color prop.
 ```tsx
-<Noreo color="#4f46e5" />
-<Noreo color="tomato" />
+<Loader color="#4f46e5" />
+<Loader color="tomato" />
 ```
 
 ### Duration
 Control the speed of the loader animation with the duration prop.
 ```tsx
-<Noreo duration={500} />
-<Noreo duration={2000} />
+<Loader duration={500} />
+<Loader duration={2000} />
 ```
 
 ### Theme
 Set the theme of the loader — light, dark, or system.
 ```tsx
-<Noreo theme="dark" />
-<Noreo theme="light" />
-<Noreo theme="system" />
+<Loader theme="dark" />
+<Loader theme="light" />
+<Loader theme="system" />
 ```
 
 ### ClassName and Custom Props
@@ -40,7 +40,7 @@ Set the theme of the loader — light, dark, or system.
 Pass custom classes and any HTML attributes like `id`, `aria-*`, `onClick`, etc.
 
 ```tsx
-<Noreo 
+<Loader 
   className="mx-auto my-10" 
   id="custom-loader" 
   onClick={() => alert('Loader clicked!')}

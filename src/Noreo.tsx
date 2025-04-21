@@ -333,7 +333,7 @@ const css = `
   }
 `;
 
-export const Noreo = ({
+export const Loader = ({
   variant = 'spinner',
   size = 20,
   color,

@@ -28,7 +28,7 @@
   ],
   "author": "Ukhang Marma <ukhangmarma459@gmail.com>",
   "license": "MIT",
-  "homepage": "https://noreo.vercel.app/",
+  "homepage": "https://noreo.ukhang.vercel.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ukhang/noreo"
@@ -40,5 +40,5 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
-  "yalcSig": "e7eae3f1aadae5e0b63765ce89721631"
+  "yalcSig": "dabbef9b96a13a3c506f300e81cc0e3b"
 }
