@@ -1,0 +1,47 @@
+---
+title: Default
+description: The most basic setup for a loader.
+---
+
+### Variant
+Change the animation style of the loader by setting the variant prop.
+
+```tsx
+<Nora/>
+<Nora variant="ripple" />
+<Nora variant="pulse" />
+<Nora variant="orbit" />
+```
+
+### Color
+Customize the loader color using the color prop.
+```tsx
+<Loader color="#4f46e5" />
+<Loader color="tomato" />
+```
+
+### Duration
+Control the speed of the loader animation with the duration prop.
+```tsx
+<Loader duration={500} />
+<Loader duration={2000} />
+```
+
+### Theme
+Set the theme of the loader — light, dark, or system.
+```tsx
+<Loader theme="dark" />
+<Loader theme="light" />
+<Loader theme="system" />
+```
+
+### ClassName and Custom Props
+
+Pass custom classes and any HTML attributes like `id`, `aria-*`, `onClick`, etc.
+
+```tsx
+<Loader 
+  className="mx-auto my-10" 
+  id="custom-loader" 
+  onClick={() => alert('Loader clicked!')}
+/>

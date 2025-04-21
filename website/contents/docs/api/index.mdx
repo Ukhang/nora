@@ -1,0 +1,100 @@
+---
+title: API Reference
+description: What components are available in Nora and how to use them.
+---
+
+### Anatomy
+
+Import the Nora component and customize it as needed.
+
+```tsx:MyLoader.tsx
+import { Nora } from 'nora';
+
+export function MyLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <Nora
+        variant="spinner"
+        size={60}
+        color="#4f46e5"
+        duration={1.5}
+        theme="system"
+      />
+    </div>
+  );
+}
+```
+
+### Components API
+
+Description of props available in the Nora component.
+
+#### Nora
+
+A flexible and minimal loader component for React.
+| Prop | Type | Default | Description |
+|--------------|---------------------------------------------------------------------------------------|------------|-------------|
+| `variant` | `'spinner' \| 'dots' \| 'pulse' \| 'orbit' \| 'drop' \| 'fade' \| 'dual-ring' \| 'pulse-ring' \| 'bars' \| 'ripple' \| 'rolling' \| 'wave'` | `'spinner'` | Choose the loader animation style. |
+| `size` | `number` | `20` | Size of the loader in pixels. |
+| `color` | `string` | `"#0a0a0a"` | Color of the loader animation. |
+| `duration` | `number` | `1000` | Animation duration in seconds. |
+| `theme` | `'light' \| 'dark' \| 'system'` | `'system'` | Automatically adapt the loader color based on the theme. |
+| `className` | `string` | `' '` | Custom classes for additional styling. |
+| `...props` | `React.HTMLAttributes<HTMLDivElement>` | `—` | Pass any other div attributes like `id`, `aria-*`, `onClick`, etc. |
+
+#### variant
+
+The type of animation to use.
+
+**Options:**
+- `spinner`
+- `dots`
+- `pulse`
+- `orbit`
+- `drop`
+- `fade`
+- `dual-ring`
+- `pulse-ring`
+- `bars`
+- `ripple`
+- `rolling`
+- `wave`
+
+#### size
+
+Defines the width and height of the loader.
+
+| Prop  | Type    | Default |
+|-------|---------|---------|
+| size  | number  | 20px    |
+
+#### color
+
+Custom color for the loader. Accepts any valid CSS color value.
+
+| Prop   | Type    | Default |
+|--------|---------|---------|
+| color  | string  | "#000000" |
+
+
+#### duration
+
+Controls the speed of the animation.
+
+| Prop      | Type    | Default |
+|-----------|---------|---------|
+| duration  | number  | 1000    |
+
+
+#### theme
+
+Switches the loader's color based on the user's system theme.
+
+| Prop   | Type                         | Default |
+|--------|------------------------------|---------|
+| theme  | `'light' \| 'dark' \| 'system'` | `'system'` | `system` |
+
+
+#### Summary
+
+Nora offers a smooth, minimal, and highly customizable loading experience, supporting multiple animation styles and full theme responsiveness.

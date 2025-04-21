@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "nora": {
+      "signature": "070e1f4fe0d300958ea7fb21a9ca1bed",
+      "file": true
+    }
+  }
+}
