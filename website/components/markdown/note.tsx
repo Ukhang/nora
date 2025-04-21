@@ -13,7 +13,7 @@ export default function Note({
   type = "note",
 }: NoteProps) {
   const noteClassNames = clsx({
-    "dark:bg-neutral-900 bg-neutral-100": type == "note",
+    "dark:bg-stone-950/25 bg-stone-50": type == "note",
     "dark:bg-red-950 bg-red-100 border-red-200 dark:border-red-900":
       type === "danger",
     "dark:bg-orange-950 bg-orange-100 border-orange-200 dark:border-orange-900":
@@ -25,11 +25,12 @@ export default function Note({
   return (
     <div
       className={cn(
-        "border rounded-xl py-0.5 px-3.5 text-sm tracking-wide",
+        "border rounded-md px-5 mt-5 mb-7 text-sm tracking-wide",
         noteClassNames
       )}
     >
-      <p className="font-semibold -mb-3">{title}:</p> {children}
+      <p className="font-bold">{title}:</p>
+      <div className="-mt-1">{children}</div>
     </div>
   );
 }

@@ -3,35 +3,66 @@
 export type EachRoute = {
   title: string;
   href: string;
-  noLink?: true;
+  noLink?: true; // noLink will create a route segment (section) but cannot be navigated
   items?: EachRoute[];
+  tag?: string;
 };
 
+// export const ROUTES: EachRoute[] = [
+//   {
+//     title: "Getting Started",
+//     href: "/getting-started",
+//     noLink: true,
+//     items: [
+//       { title: "Introduction", href: "/introduction" },
+//       {
+//         title: "Installation",
+//         href: "/installation",
+//       },
+//       { title: "Quick Start Guide", href: "/quick-start-guide" },
+//       {
+//         title: "Project Structure",
+//         href: "/project-structure",
+//       },
+//       {
+//         title: "Components",
+//         href: "/components",
+//         items: [
+//           { title: "Stepper", href: "/stepper" },
+//           { title: "Tabs", href: "/tabs" },
+//           { title: "Note", href: "/note" },
+//           { title: "Code Block", href: "/code-block" },
+//           { title: "Image & Link", href: "/image-link" },
+//           { title: "File System", href: "/file-system", tag: "New" },
+//           { title: "Custom", href: "/custom" },
+//         ],
+//       },
+//       { title: "Internationalization", href: "/i18n" },
+//       { title: "Algolia Search", href: "/algolia-search", tag: "New" },
+//       { title: "Themes", href: "/themes" },
+//       {
+//         title: "Customize",
+//         href: "/customize",
+//       },
+//     ],
+//   },
+// ];
 export const ROUTES: EachRoute[] = [
   {
     title: "Getting Started",
     href: "/getting-started",
-    noLink: true,
-    items: [
-      { title: "Introduction", href: "/introduction" },
-      {
-        title: "Installation",
-        href: "/installation",
-        items: [
-          { title: "Laravel", href: "/laravel" },
-          { title: "React", href: "/react" },
-          { title: "Gatsby", href: "/gatsby" },
-        ],
-      },
-    ],
   },
   {
-    title: "Server Actions",
-    href: "/server-actions",
+    title: "API",
+    href: "/api",
+  },
+  {
+    title: "Examples",
+    href: "/examples",
     noLink: true,
     items: [
-      { title: "getSession", href: "/getSession" },
-      { title: "getToken", href: "/getToken" },
+      { title: "Default", href: "/default" },
+      { title: "Other", href: "/other" },
     ],
   },
 ];

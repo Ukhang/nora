@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import "@/styles/globals.css";
 
@@ -30,8 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <body
-        className={`font-sans tracking-wide`}
+        className={`font-sans antialiased tracking-wide`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -41,7 +48,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="sm:container mx-auto w-[88vw] h-auto">
+          <main className="mx-auto h-auto scroll-smooth">
             {children}
           </main>
         </ThemeProvider>
