@@ -18,8 +18,8 @@ import { ModeToggle } from './theme-toggle';
 export function Leftbar() {
   return (
     <aside className="md:flex hidden w-[240px] fixed top-0 flex-col h-[100vh] overflow-y-auto bg-[#FAFAFA] dark:bg-[#171716] border-r border-dashed">
-      <ScrollArea className="py-4 px-4">
-        <div className="text-xs border-b border-dashed pb-4">
+      <ScrollArea className="py-4">
+        <div className="text-xs border-b border-dashed pb-4 px-4">
           <Link href="/" className="text-base font-medium">
             Nora
           </Link>{' '}
@@ -30,7 +30,7 @@ export function Leftbar() {
         </div>
         <DocsMenu />
       </ScrollArea>
-      <footer className="mt-auto flex gap-4 items-center justify-between mx-4 py-4 border-t border-dashed">
+      <footer className="mt-auto flex gap-4 items-center justify-between px-4 py-4 border-t border-dashed">
         <ModeToggle/>
         <Link href="https://github.com/Ukhang/nora" target='_blank' className='text-muted-foreground hover:text-neutral-900 dark:hover:text-neutral-100'>
           <Github size={18}/>

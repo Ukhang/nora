@@ -29,8 +29,8 @@ export default function SubLink({
 
   const Comp = (
     <Anchor
-      activeClassName="text-primary dark:font-medium font-medium bg-neutral-100 dark:bg-neutral-800 rounded-md"
-      className="px-2 py-1 text-sm"
+      activeClassName="text-primary dark:font-medium font-medium bg-neutral-100 dark:bg-neutral-800"
+      className="px-2 py-1 text-sm rounded-md"
       href={href}
     >
       {title}

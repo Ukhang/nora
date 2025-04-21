@@ -9,7 +9,7 @@ export default function DocsMenu({ isSheet = false }) {
   if (!pathname.startsWith("/docs")) return null;
 
   return (
-    <div className="flex flex-col gap-2.5 mt-5 pb-6 sm:text-base text-[14.5px]">
+    <div className="flex flex-col gap-2.5 mt-5 pb-6 sm:text-base text-[14.5px] px-4">
       {ROUTES.map((item, index) => {
         const modifiedItems = {
           ...item,
