@@ -1,6 +1,6 @@
 {
   "name": "noreo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A compact and customizable loader component for React.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
   ],
   "author": "Ukhang Marma <ukhangmarma459@gmail.com>",
   "license": "MIT",
-  "homepage": "https://noreo.vercel.app/",
+  "homepage": "https://noreo-loader.vercel.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ukhang/noreo"
