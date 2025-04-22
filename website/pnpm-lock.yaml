@@ -57,8 +57,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       noreo:
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^1.0.1
+        version: 1.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -2226,8 +2226,8 @@ packages:
       sass:
         optional: true
 
-  noreo@1.0.0:
-    resolution: {integrity: sha512-qwxfBEowxxq3KbrqnRdw4cpS3/KHA1daCPiR5uS7kpKWWEIwffN4qNo4Ndf2+EdcpFutWV0+4Ez2Kbx8//uwLA==}
+  noreo@1.0.1:
+    resolution: {integrity: sha512-WPps/KSc8TPIaN821iXKDnl5BsgWCPODLfe0SqoTdLMTOKXXn8fpUmjOheim0k22m2ZDdV/C1JVZJjDoB9Dtew==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -5611,7 +5611,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  noreo@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  noreo@1.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)

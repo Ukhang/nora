@@ -2,7 +2,6 @@
 
 import { getDocsTocs } from "@/lib/markdown";
 import clsx from "clsx";
-import { Dot } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
